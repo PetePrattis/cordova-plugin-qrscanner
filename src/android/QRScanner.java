@@ -470,6 +470,7 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
                 webView.getView().bringToFront();
 
                 mBarcodeView.resume();
+                webView.getView().setBackgroundColor(Color.TRANSPARENT);
             }
         });
         prepared = true;
@@ -619,7 +620,7 @@ public class QRScanner extends CordovaPlugin implements BarcodeCallback {
         this.cordova.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                webView.getView().setBackgroundColor(Color.argb(1, 0, 0, 0));
+                webView.getView().setBackgroundColor(Color.argb(0, 0, 0, 0));
                 showing = true;
                 getStatus(callbackContext);
             }
